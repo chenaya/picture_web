@@ -14,7 +14,7 @@ const Picture = ({ data }) => {
   return (
     <div className="picture">
       <p>
-        Photographer:
+        Photographer：
         {data.photographer.length > 20
           ? data.photographer.slice(0, 20) + "..."
           : data.photographer}
@@ -25,7 +25,6 @@ const Picture = ({ data }) => {
         onClick={() => window.open(data.src.large, "_blank")}
       >
         <img src={data.src.large} alt="" style={{ width: "100%" }} />
-        <div className="seeMore">see more</div>
       </div>
 
       <p>

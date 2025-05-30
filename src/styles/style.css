@@ -120,8 +120,10 @@ nav ul li a {
 }
 
 .pictures .picture .imageContainer {
+  position: relative;
   overflow: hidden;
   height: 40vh;
+  cursor: pointer;
 }
 
 .pictures .picture .imageContainer img {
@@ -129,6 +131,7 @@ nav ul li a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -136,5 +139,68 @@ nav ul li a {
 .pictures .picture .imageContainer img:hover {
   -webkit-transform: scale(1.25);
           transform: scale(1.25);
+}
+
+.pictures .picture .imageContainer::after {
+  content: "see more";
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.pictures .picture .imageContainer:hover::after {
+  opacity: 1;
+}
+
+.about {
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.about .title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about .paragraph {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.about .paragraph a {
+  color: #0070f3;
+  text-decoration: underline;
+}
+
+.about .paragraph a:hover {
+  color: #0056c1;
+}
+
+.about .subtitle {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.about .ulList {
+  margin-top: 0.5rem;
+  line-height: 1.8;
+}
+
+.about .note {
+  margin-top: 2rem;
+  font-style: italic;
+  color: gray;
 }
 /*# sourceMappingURL=style.css.map */
